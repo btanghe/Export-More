@@ -1,0 +1,13 @@
+Je kan de image van de sd kaart vinden op http://www.raspberrypi.org/downloads/
+Je kan kiezen voor de noobs image. Hiermee kan je de eerste keer, als je een hdmi en toetsenbord aansluit kiezen welke image je juist wilt installeren. 
+Bijvoorbeeld raspbian maar je kan ook kiezen voor openelec,...
+Als je filesysteem door een of andere reden corrupt geraakt, dan kan je dit terug installeren met deze noobs. De noobs image blijft op je sd kaart staan.
+
+Je kan ook voor de raspbian image gaan en deze bevat alleen raspbian.
+
+De installatie instructies zijn
+http://www.raspberrypi.org/documentation/installation/installing-images/README.md
+
+Voor een static ip adres moet je de file /etc/network/interfaces aanpassen op het sd kaartje. Je kan de configuratie file van het seminarie vinden op
+https://github.com/btanghe/Export-More/blob/master/1-iptables/interfacesRPI
+
