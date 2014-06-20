@@ -42,13 +42,13 @@ int main(int argc, char **argv)
 	bcm2835_i2c_read(temp,1);
 	printf("%x - if 33 the device is turned on\n",temp[0]);
 
-	temp[0] = 0xac;				//Channel 1 lower byte
+	temp[0] = 0xac;				//Channel 0 lower byte
     	bcm2835_i2c_write(temp,1);		
 	bcm2835_i2c_read(temp,1);
 
 	ad[1]= (int)temp[0];
 
-        temp[0] = 0xad;				//channel 1 upper byte
+        temp[0] = 0xad;				//channel 0 upper byte
         bcm2835_i2c_write(temp,1);
         bcm2835_i2c_read(temp,1); 
 
