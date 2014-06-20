@@ -1,0 +1,9 @@
+download the ubuntu iso van volgende pagina
+http://www.ubuntu.com/download/desktop
+
+Installeer het programma usb-creator met apt-get of the software manager (Startup Disk Creator)
+Gebruik deze om de usb disk te maken.
+Je hebt een live ubuntu usb disk gemaakt
+
+source - https://help.ubuntu.com/community/Installation/FromUSBStick
+http://en.wikipedia.org/wiki/Ubuntu_Live_USB_creator
