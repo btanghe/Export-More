@@ -1,0 +1,25 @@
+Extra kernel drivers
+
+
+<*> Enable loadable module support
+Network support > <M> CAN bus subsystem support
+Network support > CAN bus subsystem support > <M> Raw CAN Protocol
+Network support > CAN bus subsystem support > <M> Broadcast Manager CAN protocol
+Network support > CAN bus subsystem support > <M> CAN Gateway/Router?
+Network support > CAN bus subsystem support > CAN Device Drivers > <M> Microship MCP251x SPI CAN controllers (eerst spi support aanvinken, zoals op de regel hieronder, dan wordt deze optie zichtbaar)
+Device Drivers > [*] SPI support > [M] BCM2708 SPI controller driver (SPIO)
+
+
+
+Patch for newer kernels
+
+arch/arm/mach-bcm2708/bcm2708.c
+
+static struct mcp251x_platform_data mcp251x_info = {
+         .oscillator_frequency   = 16000000,
+         .board_specific_setup   = NULL,
+-         .irq_flags              = IRQF_TRIGGER_FALLING,
++         .irq_flags              = IRQF_TRIGGER_FALLING|IRQF_ONESHOT,
+         .power_enable           = NULL,
+         .transceiver_enable     = NULL,
+ };
