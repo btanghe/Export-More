@@ -1,10 +1,24 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+//#define RPI
+
 #include <QMainWindow>
 #include <QTimer>
 #include <QDebug>
 #include <QTcpSocket>
+
+
+//Expansion board pinout
+
+#define PIN1 RPI_V2_GPIO_P1_07		//4
+#define PIN2 RPI_V2_GPIO_P1_08		//14
+#define PIN3 RPI_V2_GPIO_P1_18		//24
+#define PIN4 RPI_V2_GPIO_P1_16		//23
+#define PIN5 RPI_V2_GPIO_P1_15		//22
+#define PIN6 RPI_V2_GPIO_P1_13		//27
+#define PIN7 RPI_V2_GPIO_P1_12		//18
+#define PIN8 RPI_V2_GPIO_P1_11		//17
 
 namespace Ui {
 class MainWindow;
@@ -20,6 +34,10 @@ public:
     QTimer timer;
     QTcpSocket socket;
 
+#ifdef RPI
+    QTimer sensors;
+#endif
+
 private:
     Ui::MainWindow *ui;
 
@@ -27,9 +45,11 @@ private slots:
     void connectTCP();
     void readTCP();
     void connectedTCP();
-    void sendData();
     void tempChanged(int data);
     void lightChanged(int data);
+#ifdef RPI
+    void readSensor();
+#endif
 };
 
 #endif // MAINWINDOW_H
