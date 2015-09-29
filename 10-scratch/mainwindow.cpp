@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#ifdef RPI
 #include "bcm2835.h"
+#endif
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -228,6 +230,48 @@ void MainWindow::readTCP()
         bcm2835_gpio_write(PIN8, LOW);
         #endif
     }
+    if(data1.contains("ledsoff") == true)
+    {
+        ui->led1->setChecked(false);
+        ui->led2->setChecked(false);
+        ui->led3->setChecked(false);
+        ui->led4->setChecked(false);
+        ui->led5->setChecked(false);
+        ui->led6->setChecked(false);
+        ui->led7->setChecked(false);
+        ui->led8->setChecked(false);
+        #ifdef RPI
+        bcm2835_gpio_write(PIN1, LOW);
+        bcm2835_gpio_write(PIN2, LOW);
+        bcm2835_gpio_write(PIN3, LOW);
+        bcm2835_gpio_write(PIN4, LOW);
+        bcm2835_gpio_write(PIN5, LOW);
+        bcm2835_gpio_write(PIN6, LOW);
+        bcm2835_gpio_write(PIN7, LOW);
+        bcm2835_gpio_write(PIN8, LOW);
+        #endif
+    }
+    if(data1.contains("ledson") == true)
+    {
+        ui->led1->setChecked(true);
+        ui->led2->setChecked(true);
+        ui->led3->setChecked(true);
+        ui->led4->setChecked(true);
+        ui->led5->setChecked(true);
+        ui->led6->setChecked(true);
+        ui->led7->setChecked(true);
+        ui->led8->setChecked(true);
+        #ifdef RPI
+        bcm2835_gpio_write(PIN1, HIGH);
+        bcm2835_gpio_write(PIN2, HIGH);
+        bcm2835_gpio_write(PIN3, HIGH);
+        bcm2835_gpio_write(PIN4, HIGH);
+        bcm2835_gpio_write(PIN5, HIGH);
+        bcm2835_gpio_write(PIN6, HIGH);
+        bcm2835_gpio_write(PIN7, HIGH);
+        bcm2835_gpio_write(PIN8, HIGH);
+        #endif
+    }
 
 }
 
@@ -237,8 +281,8 @@ void MainWindow::connectedTCP()
     qDebug() << "TCP connected";
 
     timer.stop();                           //stop the get connected timer
-    emit ui->LightSensor->valueChanged(0);  //send 0 to scratch
-    emit ui->Tempsensor->valueChanged(0);   //send 0 to scratch
+    //emit ui->LightSensor->valueChanged(0);  //send 0 to scratch
+    //emit ui->Tempsensor->valueChanged(0);   //send 0 to scratch
 #ifdef RPI
     sensors.start();                        //start reading sensors
 #endif
