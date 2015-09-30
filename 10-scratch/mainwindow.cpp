@@ -11,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
 #ifdef RPI
+	char tmp[2];
+
     bcm2835_init();
 
     // Set the pins to be an output
@@ -33,6 +35,15 @@ MainWindow::MainWindow(QWidget *parent) :
     bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_65536); 	//set clock frequency
     bcm2835_spi_chipSelect(BCM2835_SPI_CS1);                      	//use chip select 1
     bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS1, LOW);      	//chip select 0 to activate
+
+    tmp[0] = 0xa0;                          //select the control register
+    bcm2835_i2c_write(tmp,1);
+    tmp[0] = 0x03;                          //Power up the device
+    bcm2835_i2c_write(tmp,1);
+    bcm2835_delay(500);
+
+    bcm2835_i2c_read(tmp,1);
+	qDebug() << "if 33 the device is turned on: " << tmp[0];
 
 #endif
 
@@ -299,15 +310,11 @@ void MainWindow::readSensor()
         //read temperature
 
         char buffer[4];
+	char tmp[2];
         int temp;
-        char tmp[2];
         char ad[2];
         int light;
         buffer[0]=buffer[1]=buffer[2]=buffer[3]=0;
-
-        buffer[0] = 0x58;						//read the id
-        bcm2835_spi_transfern(buffer,2);
-        qDebug() << buffer[1];
 
         buffer[0] = 0x50;					//read the temp
         bcm2835_spi_transfern(buffer,3);
@@ -321,15 +328,6 @@ void MainWindow::readSensor()
         ui->Tempsensor->setValue(temp);
 
         //read light
-
-        tmp[0] = 0xa0;				//select the control register
-        bcm2835_i2c_write(tmp,1);
-        tmp[0] = 0x03;				//Power up the device
-        bcm2835_i2c_write(tmp,1);
-        bcm2835_delay(500);
-
-        bcm2835_i2c_read(tmp,1);
-        qDebug() << "if 33 the device is turned on: " << tmp[0];
 
         tmp[0] = 0xac;				//Channel 0 lower byte
         bcm2835_i2c_write(tmp,1);
