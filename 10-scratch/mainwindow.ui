@@ -6,37 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>581</width>
-    <height>511</height>
+    <width>500</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="temp_label">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>30</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="data_label">
     <property name="enabled">
      <bool>false</bool>
     </property>
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>250</y>
-      <width>221</width>
-      <height>61</height>
+      <x>80</x>
+      <y>360</y>
+      <width>0</width>
+      <height>0</height>
      </rect>
     </property>
     <property name="text">
@@ -48,8 +35,8 @@
      <rect>
       <x>40</x>
       <y>80</y>
-      <width>117</width>
-      <height>22</height>
+      <width>0</width>
+      <height>0</height>
      </rect>
     </property>
     <property name="text">
@@ -64,8 +51,8 @@
      <rect>
       <x>40</x>
       <y>110</y>
-      <width>117</width>
-      <height>22</height>
+      <width>0</width>
+      <height>0</height>
      </rect>
     </property>
     <property name="text">
@@ -80,8 +67,8 @@
      <rect>
       <x>40</x>
       <y>140</y>
-      <width>117</width>
-      <height>22</height>
+      <width>0</width>
+      <height>0</height>
      </rect>
     </property>
     <property name="text">
@@ -96,8 +83,8 @@
      <rect>
       <x>40</x>
       <y>200</y>
-      <width>117</width>
-      <height>22</height>
+      <width>0</width>
+      <height>0</height>
      </rect>
     </property>
     <property name="text">
@@ -112,8 +99,8 @@
      <rect>
       <x>40</x>
       <y>230</y>
-      <width>117</width>
-      <height>22</height>
+      <width>0</width>
+      <height>0</height>
      </rect>
     </property>
     <property name="text">
@@ -128,8 +115,8 @@
      <rect>
       <x>40</x>
       <y>170</y>
-      <width>117</width>
-      <height>22</height>
+      <width>0</width>
+      <height>0</height>
      </rect>
     </property>
     <property name="text">
@@ -144,8 +131,8 @@
      <rect>
       <x>40</x>
       <y>260</y>
-      <width>117</width>
-      <height>22</height>
+      <width>0</width>
+      <height>0</height>
      </rect>
     </property>
     <property name="text">
@@ -160,8 +147,8 @@
      <rect>
       <x>40</x>
       <y>290</y>
-      <width>117</width>
-      <height>22</height>
+      <width>0</width>
+      <height>0</height>
      </rect>
     </property>
     <property name="text">
@@ -174,59 +161,182 @@
    <widget class="QSpinBox" name="Tempsensor">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>70</y>
+      <x>250</x>
+      <y>450</y>
       <width>71</width>
       <height>31</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QLabel" name="Temp_label">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>40</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
-    <property name="text">
-     <string>Temp</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Light_label">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>40</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Light</string>
+    <property name="suffix">
+     <string> °C</string>
     </property>
    </widget>
    <widget class="QSpinBox" name="LightSensor">
     <property name="geometry">
      <rect>
       <x>340</x>
-      <y>70</y>
-      <width>61</width>
+      <y>530</y>
+      <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="suffix">
+     <string> Lux</string>
     </property>
     <property name="maximum">
      <number>99999</number>
     </property>
    </widget>
+   <widget class="QLabel" name="exportBoard">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>460</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="exportLed0">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>460</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="exportLed1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>460</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="exportLed2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>460</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="exportLed3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>460</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="exportLed4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>460</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="exportLed5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>460</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="exportLed6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>460</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="exportLed7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>460</width>
+      <height>620</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>data_label</zorder>
+   <zorder>led1</zorder>
+   <zorder>led2</zorder>
+   <zorder>led3</zorder>
+   <zorder>led5</zorder>
+   <zorder>led6</zorder>
+   <zorder>led4</zorder>
+   <zorder>led7</zorder>
+   <zorder>led8</zorder>
+   <zorder>exportBoard</zorder>
+   <zorder>exportLed0</zorder>
+   <zorder>exportLed1</zorder>
+   <zorder>exportLed2</zorder>
+   <zorder>exportLed3</zorder>
+   <zorder>exportLed4</zorder>
+   <zorder>exportLed5</zorder>
+   <zorder>exportLed6</zorder>
+   <zorder>exportLed7</zorder>
+   <zorder>LightSensor</zorder>
+   <zorder>Tempsensor</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>581</width>
+     <width>500</width>
      <height>25</height>
     </rect>
    </property>

@@ -47,6 +47,19 @@ MainWindow::MainWindow(QWidget *parent) :
 
 #endif
 
+    empty = QPixmap(":/pics/empty_scaled.png");
+    leds = QPixmap(":/pics/ledsuit_scaled.png");
+    led0 = QPixmap(":/pics/led0_scaled.png");
+    led1 = QPixmap(":/pics/led1_scaled.png");
+    led2 = QPixmap(":/pics/led2_scaled.png");
+    led3 = QPixmap(":/pics/led3_scaled.png");
+    led4 = QPixmap(":/pics/led4_scaled.png");
+    led5 = QPixmap(":/pics/led5_scaled.png");
+    led6 = QPixmap(":/pics/led6_scaled.png");
+    led7 = QPixmap(":/pics/led7_scaled.png");
+
+    size = QSize(ui->exportBoard->width(),ui->exportBoard->height());
+    ui->exportBoard->setPixmap(leds.scaled(size));
 
     timer.setInterval(500);
     connect(&timer,SIGNAL(timeout()),this,SLOT(connectTCP()));
@@ -125,6 +138,7 @@ void MainWindow::readTCP()
     if(data1.contains("led1on") == true )
     {
         ui->led1->setChecked(true);
+        ui->exportLed0->setPixmap(led0.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN1, HIGH);
         #endif
@@ -132,6 +146,7 @@ void MainWindow::readTCP()
     if(data1.contains("led1off") == true )
     {
         ui->led1->setChecked(false);
+        ui->exportLed0->setPixmap(empty.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN1, LOW);
         #endif
@@ -140,6 +155,7 @@ void MainWindow::readTCP()
     if(data1.contains("led2on") == true )
     {
         ui->led2->setChecked(true);
+        ui->exportLed1->setPixmap(led1.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN2, HIGH);
         #endif
@@ -147,6 +163,7 @@ void MainWindow::readTCP()
     if(data1.contains("led2off") == true )
     {
         ui->led2->setChecked(false);
+        ui->exportLed1->setPixmap(empty.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN2, LOW);
         #endif
@@ -155,6 +172,7 @@ void MainWindow::readTCP()
     if(data1.contains("led3on") == true )
     {
         ui->led3->setChecked(true);
+        ui->exportLed2->setPixmap(led2.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN3, HIGH);
         #endif
@@ -162,6 +180,7 @@ void MainWindow::readTCP()
     if(data1.contains("led3off") == true )
     {
         ui->led3->setChecked(false);
+        ui->exportLed2->setPixmap(empty.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN3, LOW);
         #endif
@@ -170,6 +189,7 @@ void MainWindow::readTCP()
     if(data1.contains("led4on") == true )
     {
         ui->led4->setChecked(true);
+        ui->exportLed3->setPixmap(led3.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN4, HIGH);
         #endif
@@ -177,6 +197,7 @@ void MainWindow::readTCP()
     if(data1.contains("led4off") == true )
     {
         ui->led4->setChecked(false);
+        ui->exportLed3->setPixmap(empty.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN4, LOW);
         #endif
@@ -185,6 +206,7 @@ void MainWindow::readTCP()
     if(data1.contains("led5on") == true )
     {
         ui->led5->setChecked(true);
+        ui->exportLed4->setPixmap(led4.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN5, HIGH);
         #endif
@@ -192,6 +214,7 @@ void MainWindow::readTCP()
     if(data1.contains("led5off") == true )
     {
         ui->led5->setChecked(false);
+        ui->exportLed4->setPixmap(empty.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN5, LOW);
         #endif
@@ -200,6 +223,7 @@ void MainWindow::readTCP()
     if(data1.contains("led6on") == true )
     {
         ui->led6->setChecked(true);
+        ui->exportLed5->setPixmap(led5.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN6, HIGH);
         #endif
@@ -207,6 +231,7 @@ void MainWindow::readTCP()
     if(data1.contains("led6off") == true )
     {
         ui->led6->setChecked(false);
+        ui->exportLed5->setPixmap(empty.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN6, LOW);
         #endif
@@ -215,6 +240,7 @@ void MainWindow::readTCP()
     if(data1.contains("led7on") == true )
     {
         ui->led7->setChecked(true);
+        ui->exportLed6->setPixmap(led6.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN7, HIGH);
         #endif
@@ -222,6 +248,7 @@ void MainWindow::readTCP()
     if(data1.contains("led7off") == true )
     {
         ui->led7->setChecked(false);
+        ui->exportLed6->setPixmap(empty.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN7, LOW);
         #endif
@@ -230,6 +257,7 @@ void MainWindow::readTCP()
     if(data1.contains("led8on") == true )
     {
         ui->led8->setChecked(true);
+        ui->exportLed7->setPixmap(led7.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN8, HIGH);
         #endif
@@ -237,6 +265,7 @@ void MainWindow::readTCP()
     if(data1.contains("led8off") == true )
     {
         ui->led8->setChecked(false);
+        ui->exportLed7->setPixmap(empty.scaled(size));
         #ifdef RPI
         bcm2835_gpio_write(PIN8, LOW);
         #endif
@@ -251,6 +280,15 @@ void MainWindow::readTCP()
         ui->led6->setChecked(false);
         ui->led7->setChecked(false);
         ui->led8->setChecked(false);
+        ui->exportLed0->setPixmap(empty.scaled(size));
+        ui->exportLed1->setPixmap(empty.scaled(size));
+        ui->exportLed2->setPixmap(empty.scaled(size));
+        ui->exportLed3->setPixmap(empty.scaled(size));
+        ui->exportLed4->setPixmap(empty.scaled(size));
+        ui->exportLed5->setPixmap(empty.scaled(size));
+        ui->exportLed6->setPixmap(empty.scaled(size));
+        ui->exportLed7->setPixmap(empty.scaled(size));
+
         #ifdef RPI
         bcm2835_gpio_write(PIN1, LOW);
         bcm2835_gpio_write(PIN2, LOW);
@@ -272,6 +310,15 @@ void MainWindow::readTCP()
         ui->led6->setChecked(true);
         ui->led7->setChecked(true);
         ui->led8->setChecked(true);
+        ui->exportLed0->setPixmap(led0.scaled(size));
+        ui->exportLed1->setPixmap(led1.scaled(size));
+        ui->exportLed2->setPixmap(led2.scaled(size));
+        ui->exportLed3->setPixmap(led3.scaled(size));
+        ui->exportLed4->setPixmap(led4.scaled(size));
+        ui->exportLed5->setPixmap(led5.scaled(size));
+        ui->exportLed6->setPixmap(led6.scaled(size));
+        ui->exportLed7->setPixmap(led7.scaled(size));
+
         #ifdef RPI
         bcm2835_gpio_write(PIN1, HIGH);
         bcm2835_gpio_write(PIN2, HIGH);

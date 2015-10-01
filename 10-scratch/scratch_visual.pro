@@ -27,3 +27,6 @@ contains( KIT, RPI ) {
     INCLUDEPATH += ../../src
 
 }
+
+RESOURCES += \
+    leds.qrc

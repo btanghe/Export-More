@@ -7,6 +7,8 @@
 #include <QTimer>
 #include <QDebug>
 #include <QTcpSocket>
+#include <QPixmap>
+#include <QSize>
 
 
 //Expansion board pinout
@@ -33,6 +35,17 @@ public:
     ~MainWindow();
     QTimer timer;
     QTcpSocket socket;
+    QPixmap empty;
+    QPixmap leds;
+    QPixmap led0;
+    QPixmap led1;
+    QPixmap led2;
+    QPixmap led3;
+    QPixmap led4;
+    QPixmap led5;
+    QPixmap led6;
+    QPixmap led7;
+    QSize size;
 
 #ifdef RPI
     QTimer sensors;
