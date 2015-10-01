@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>650</height>
+    <width>529</width>
+    <height>770</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -161,8 +161,8 @@
    <widget class="QSpinBox" name="Tempsensor">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>450</y>
+      <x>280</x>
+      <y>510</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -177,8 +177,8 @@
    <widget class="QSpinBox" name="LightSensor">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>530</y>
+      <x>360</x>
+      <y>590</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -198,8 +198,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>460</width>
-      <height>620</height>
+      <width>500</width>
+      <height>694</height>
      </rect>
     </property>
     <property name="text">
@@ -211,8 +211,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>460</width>
-      <height>620</height>
+      <width>500</width>
+      <height>694</height>
      </rect>
     </property>
     <property name="text">
@@ -224,8 +224,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>460</width>
-      <height>620</height>
+      <width>500</width>
+      <height>694</height>
      </rect>
     </property>
     <property name="text">
@@ -237,8 +237,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>460</width>
-      <height>620</height>
+      <width>500</width>
+      <height>694</height>
      </rect>
     </property>
     <property name="text">
@@ -250,8 +250,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>460</width>
-      <height>620</height>
+      <width>500</width>
+      <height>694</height>
      </rect>
     </property>
     <property name="text">
@@ -263,8 +263,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>460</width>
-      <height>620</height>
+      <width>500</width>
+      <height>694</height>
      </rect>
     </property>
     <property name="text">
@@ -276,8 +276,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>460</width>
-      <height>620</height>
+      <width>500</width>
+      <height>694</height>
      </rect>
     </property>
     <property name="text">
@@ -289,8 +289,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>460</width>
-      <height>620</height>
+      <width>500</width>
+      <height>694</height>
      </rect>
     </property>
     <property name="text">
@@ -302,8 +302,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>460</width>
-      <height>620</height>
+      <width>500</width>
+      <height>694</height>
      </rect>
     </property>
     <property name="text">
@@ -336,7 +336,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
+     <width>529</width>
      <height>25</height>
     </rect>
    </property>
