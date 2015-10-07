@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/pics">
+        <file>led0_scaled.png</file>
+        <file>ledsuit_scaled.png</file>
+        <file>empty_scaled.png</file>
+        <file>led7_scaled.png</file>
+        <file>led6_scaled.png</file>
+        <file>led5_scaled.png</file>
+        <file>led4_scaled.png</file>
+        <file>led3_scaled.png</file>
+        <file>led2_scaled.png</file>
+        <file>led1_scaled.png</file>
+    </qresource>
+</RCC>
