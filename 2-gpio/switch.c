@@ -31,24 +31,23 @@
 
 int main(int argc, char **argv)
 {
-
 	int i;
 
 	if (!bcm2835_init())
 		return 1;
 
 	// Set the pins to be an output
-    	bcm2835_gpio_fsel(PIN0, BCM2835_GPIO_FSEL_OUTP);
+	bcm2835_gpio_fsel(PIN0, BCM2835_GPIO_FSEL_OUTP);
 	bcm2835_gpio_fsel(PIN1, BCM2835_GPIO_FSEL_OUTP);
- 	bcm2835_gpio_fsel(PIN2, BCM2835_GPIO_FSEL_OUTP);
- 	bcm2835_gpio_fsel(PIN3, BCM2835_GPIO_FSEL_OUTP);
-    	bcm2835_gpio_fsel(PIN4, BCM2835_GPIO_FSEL_OUTP);
- 	bcm2835_gpio_fsel(PIN5, BCM2835_GPIO_FSEL_OUTP);
- 	bcm2835_gpio_fsel(PIN6, BCM2835_GPIO_FSEL_OUTP);
- 	bcm2835_gpio_fsel(PIN7, BCM2835_GPIO_FSEL_OUTP);
+	bcm2835_gpio_fsel(PIN2, BCM2835_GPIO_FSEL_OUTP);
+	bcm2835_gpio_fsel(PIN3, BCM2835_GPIO_FSEL_OUTP);
+	bcm2835_gpio_fsel(PIN4, BCM2835_GPIO_FSEL_OUTP);
+	bcm2835_gpio_fsel(PIN5, BCM2835_GPIO_FSEL_OUTP);
+	bcm2835_gpio_fsel(PIN6, BCM2835_GPIO_FSEL_OUTP);
+	bcm2835_gpio_fsel(PIN7, BCM2835_GPIO_FSEL_OUTP);
 
 	while(1)
-    	{
+	{
 		//turn the even leds on
 		//turn the odd leds off
 		bcm2835_gpio_write(PIN0, HIGH);
@@ -79,8 +78,8 @@ int main(int argc, char **argv)
 	
 		// wait a little bit
 		bcm2835_delay(500);
-    	}
-    bcm2835_close();
-    return 0;
+	}
+	
+	bcm2835_close();
+	return 0;
 }
-
