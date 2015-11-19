@@ -15,7 +15,7 @@
 // $Id: RF22.h,v 1.21 2012/05/30 01:51:25 mikem Exp $
 
 /*******************
-                        length  command extra   0-rw-register-cr-00
+						length  command extra   0-rw-register-cr-00
 Read the status(0)      2       0x40    ro      0100 0000
 read the configur(1)    2       0x48    r       0100 1000
 write the confi         2       0x08    w       0000 1000
@@ -38,7 +38,8 @@ write the Tlow          3       0x38    w       0011 1000
 int main(int argc, char **argv)
 {
 	if (!bcm2835_init())
-	return 1;
+		return 1;
+
 	char buffer[4];
 	buffer[0] = 50;			
 	int i,temp;
@@ -62,10 +63,10 @@ int main(int argc, char **argv)
 	{
 		buffer[0] = 0x50;					//read the temp
 		bcm2835_spi_transfern(buffer,3);
-		printf("status %02X %02X\n",buffer[1],buffer[2]);
+		printf("status %02X %02X\n", buffer[1], buffer[2]);
 		temp = buffer[1]; 
 		temp = temp<<8;
-                temp = temp + ( buffer[2] & 0xF8);
+		temp = temp + ( buffer[2] & 0xF8);
 		printf("status %08x\n",temp);
 		temp = temp>>3;
 		temp = temp/16;
@@ -77,4 +78,3 @@ int main(int argc, char **argv)
 	bcm2835_close();
 	return 0;
 }
-
